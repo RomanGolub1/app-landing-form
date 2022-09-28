@@ -1,0 +1,66 @@
+@use "src/assets/scss/mixin/extend" as *;
+@use "src/assets/scss/presets/skin" as *;
+@use "src/assets/scss/presets/variables" as *;
+@use "src/assets/scss/mixin/mixins-media" as *;
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: $font-header;
+  overflow-x: hidden;
+  color: $color-black;
+  height: 100vh;
+}
+
+h2{
+  font-family: $font-main;
+  color: $color-orange;
+  font-weight: 400;
+  line-height: 75.27px;
+  font-size: 50px;
+
+  @include sm {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+  }
+}
+
+h3 {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.5;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+a{
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: $color-black;
+}
+
+p {
+  color: $color-black;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 29px;
+
+  @include sm {
+    line-height: 22.4px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+svg{
+  margin-bottom: 10px;
+}

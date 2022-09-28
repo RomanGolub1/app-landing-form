@@ -1,0 +1,30 @@
+<!-- Header nav -->
+<div class="header__body">
+  <a class="header__logo" href="#">
+    <img class="header-nav__img" src="assets/image/logo.svg" alt="logo">
+    <img src="assets/image/logo-name.svg" alt="logo-name">
+    <span class="header__copy">&#174;</span>
+  </a>
+  <div class="header__burger active" [class.active]="menuVariable" (click)="openMenu()">
+    <span class="line-menu half start"></span>
+    <span class="line-menu"></span>
+    <span class="line-menu half end"></span>
+  </div>
+
+  <nav class="header__menu active" [class.active]="nav_open_variable">
+    <ul class="header__list">
+      <li><a class="header__link" href="#">Home</a></li>
+      <li><a class="header__link" href="#">About</a></li>
+      <li><a class="header__link" href="#">What We Do</a></li>
+      <li><a class="header__link" href="#">Contact Us</a></li>
+
+      <span class="nav__services">
+        <h3>Service</h3>
+       <li><a class="header__link" href="#">Training and Implementation</a></li>
+       <li><a class="header__link" href="#">Cyber Consultants</a></li>
+       <li><a class="header__link" href="#">Consultancy and brand protection</a></li>
+        <li><a class="header__link" href="#">Software</a></li>
+      </span>
+    </ul>
+  </nav>
+</div>

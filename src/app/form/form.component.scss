@@ -1,0 +1,129 @@
+@use "src/assets/scss/presets/skin" as *;
+@use "src/assets/scss/presets/variables" as *;
+@use "src/assets/scss/mixin/extend" as *;
+@use "src/assets/scss/mixin/mixins-media" as *;
+
+form {
+  padding: $gap-lg 0 $gap-lg 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+  color: $color-grey;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  @extend %text-shadow;
+  padding-top: 50px;
+
+  @include sm {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: left;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  &-container {
+    margin: $gap-x3 0 0 $gap-x3;
+    font-size: 18px;
+
+    input {
+      position: relative;
+      height: 100%;
+      width: 45%;
+      padding: 6px $gap-lg 10px 0;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $color-grey;
+      border-top: 2px solid transparent;
+      &:focus {
+        border-bottom: 1px solid $color-black;
+      }
+      @include sm {
+        width: 100%;
+      }
+    }
+
+    p {
+      width: 45%;
+
+      @include lg {
+        display: none;
+      }
+    }
+
+    @include sm {
+      font-size: 14px;
+      margin: 24px 24px 0 24px;
+    }
+
+    &__btn {
+      @include sm{
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &-us {
+    color: $color-black;
+  }
+
+  &-arrow img{
+    @include sm{
+      max-width: 40px;
+    }
+  }
+}
+
+.form-label {
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: left;
+}
+
+.btn {
+  @extend %btn-shadow;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  width: 170px;
+  height: 61px;
+
+  background: $color-orange;
+  border-radius: 16px;
+
+  &-info{
+    font-family: $font-header;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+}
+
+.alert-danger {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: left;
+}
+
+input.ng-invalid.ng-touched {
+  border-bottom: 1px solid red;
+}
+
+form.ng-valid .ng-touched {
+  border-bottom: 1px solid #999999;
+}
+.invalid-feedback {
+  @extend %feedback;
+  color: red;
+}
+.valid-feedback {
+  @extend %feedback;
+  color: #009f00;
+}

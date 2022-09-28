@@ -1,0 +1,80 @@
+<!--Form contact-->
+<div class="contact">
+  <h2>CONTACT <span class="contact-us">US</span></h2>
+  <a id="form" href="./#contact" class="contact-arrow"><img src="assets/image/arrow.svg" alt="arrow-top"></a>
+</div>
+
+<!--Form-->
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+  <div class="contact-container">
+    <label class="form-label" for="name">{{formLabels.name}}</label>
+    <input (blur)="onValueChanged()"
+           [class]="{'input-valid': form['name'].valid,
+                     'input-invalid': form['name'].invalid && form['name'].touched}"
+           class="form-control" type="text" id="name" formControlName="name" placeholder="{{formPlaceholder.name}}">
+    <div *ngIf="form['name'].valid" class="valid-feedback">{{formSuccess.name}}</div>
+    <div *ngIf="form['name'].invalid && form['name'].touched" class="invalid-feedback">{{formErrors.name}}</div>
+  </div>
+
+  <div class="contact-container">
+    <label class="form-label" for="company">{{formLabels.company}}</label>
+    <input (blur)="onValueChanged()"
+           [class]="{'input-valid': form['company'].valid,
+                     'input-invalid': form['company'].invalid && form['company'].touched}"
+           class="form-control" type="text" id="company" formControlName="company"
+           placeholder="{{formPlaceholder.company}}">
+    <div *ngIf="form['company'].valid" class="valid-feedback">{{formSuccess.company}}</div>
+    <div *ngIf="form['company'].invalid && form['company'].touched"
+         class="invalid-feedback">{{formErrors.company}}</div>
+  </div>
+
+  <div class="contact-container">
+    <label class="form-label" for="phone">{{formLabels.phone}}</label>
+    <input (blur)="onValueChanged()"
+           [class]="{'input-valid': form['phone'].valid,
+                     'input-invalid': form['phone'].invalid && form['phone'].touched}"
+           class="form-control" type="number" id="phone" formControlName="phone"
+           placeholder="{{formPlaceholder.phone}}">
+    <div *ngIf="form['phone'].valid" class="valid-feedback">{{formSuccess.phone}}</div>
+    <div *ngIf="form['phone'].invalid && form['phone'].touched" class="invalid-feedback">{{formErrors.phone}}</div>
+  </div>
+
+  <div class="contact-container">
+    <label class="form-label" for="email">{{formLabels.email}}</label>
+    <input (blur)="onValueChanged()"
+           [class]="{'input-valid': form['email'].valid,
+                     'input-invalid': form['email'].invalid && form['email'].touched}"
+           class="form-control" type="text" id="email" formControlName="email" placeholder="{{formPlaceholder.email}}">
+    <div *ngIf="form['email'].valid" class="valid-feedback">{{formSuccess.email}}</div>
+    <div *ngIf="form['email'].invalid && form['email'].touched" class="invalid-feedback">{{formErrors.email}}</div>
+  </div>
+
+  <div class="contact-container">
+    <label class="form-label" for="message">{{formLabels.message}}</label>
+    <p>With our global footprint and our specialized team members and
+       partners we know what it takes to make sure that we can
+       deliver a minimum risk environment for our clients.</p>
+    <input (blur)="onValueChanged()"
+           [class]="{'input-valid': form['message'].valid,
+                     'input-invalid': form['message'].invalid && form['message'].touched}"
+           class="form-control" type="text" id="message" formControlName="message"
+           placeholder="{{formPlaceholder.message}}">
+    <div *ngIf="form['message'].valid" class="valid-feedback">{{formSuccess.message}}</div>
+    <div *ngIf="form['message'].invalid && form['message'].touched"
+         class="invalid-feedback">{{formErrors.message}}</div>
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-container__btn">
+      <button class="btn btn-info" [disabled]="userForm.invalid" type="submit" (click)="onSubmit()">Send Message</button>
+    </div>
+  </div>
+
+</form>
+
+
+
+
+
+
